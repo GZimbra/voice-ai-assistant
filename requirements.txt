@@ -1,0 +1,8 @@
+openai
+openai-whisper
+gTTS
+sounddevice
+scipy
+playsound==1.2.2
+python-dotenv
+rich

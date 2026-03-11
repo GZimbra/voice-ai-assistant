@@ -1,0 +1,7 @@
+OPENAI_API_KEY = "SUA_API_KEY"
+
+WAKE_WORD = "hacker"
+
+AUDIO_DURATION = 5
+MODEL_WHISPER = "base"
+CHAT_MODEL = "gpt-4o-mini"
