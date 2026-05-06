@@ -1,8 +1,7 @@
-openai
 openai-whisper
+torch
 gTTS
 sounddevice
 scipy
 playsound==1.2.2
-python-dotenv
 rich
