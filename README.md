@@ -1,18 +1,18 @@
-# Voice AI Assistant Local
+# Local Voice AI Assistant
 
-Assistente de voz local em Python para diagnostico tecnico.
+Local voice assistant built with Python for technical diagnostics and cybersecurity-oriented support.
 
-- transcricao local com Whisper
-- wake word configuravel
-- classificador neural local com PyTorch
-- motor local de resposta tecnica
-- memoria curta de conversa
-- sem OpenAI, sem ChatGPT, sem API externa para IA
+- Local speech transcription with Whisper
+- Configurable wake word
+- Local neural intent classifier with PyTorch
+- Offline technical response engine
+- Short conversation memory
+- No OpenAI API, no ChatGPT, no external AI provider
 
-## Arquitetura
+## Architecture
 
 ```text
-Audio -> Whisper local -> PyTorch intent classifier -> LocalAssistantEngine -> TTS
+Audio -> Local Whisper -> PyTorch Intent Classifier -> LocalAssistantEngine -> TTS
 ```
 
 ## Setup
@@ -23,36 +23,51 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## Executar
+## Run
 
 ```powershell
 python main.py
 ```
 
-Exemplos:
+## Usage Examples
 
 ```text
-hacker analise uma vulnerabilidade xss
-hacker como testar dns e gateway no windows
-hacker crie uma api em csharp dotnet
-hacker como mitigar brute force
-hacker resuma nossa conversa
+hacker analyze an XSS vulnerability
+hacker how to test DNS and gateway on Windows
+hacker create a C# .NET API
+hacker how to mitigate brute force attacks
+hacker summarize our conversation
 ```
 
-## IA local
+## Local AI
 
-`modules/ml_intent.py` treina em runtime um modelo PyTorch:
+`modules/ml_intent.py` trains a PyTorch model at runtime:
 
-- entrada: bag-of-words da frase transcrita
-- arquitetura: `Linear -> ReLU -> Linear`
-- saida: intencao classificada
+- Input: bag-of-words from the transcribed sentence
+- Architecture: `Linear -> ReLU -> Linear`
+- Output: classified intent
 
-`modules/ai_engine.py` usa essa intencao para gerar resposta local com contexto tecnico de:
+Supported intents:
+
+- `code`
+- `network`
+- `security`
+- `summary`
+- `greeting`
+- `exit`
+- `unknown`
+
+`modules/ai_engine.py` uses the classified intent to generate local technical responses for:
 
 - Python
 - C#/.NET
-- redes
-- ciberseguranca
-- diagnostico operacional
+- networking
+- cybersecurity
+- operational diagnostics
 
-Observacao: o pacote `openai-whisper` e usado apenas para Whisper local. Nao ha chamada para OpenAI API.
+## Important Note
+
+The package `openai-whisper` is used only for local Whisper transcription.
+
+This project does not call the OpenAI API or any external AI provider.
+
